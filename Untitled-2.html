@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChewKai Client Installer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Starfield Background -->
+    <div class="starfield" id="starfield"></div>
+    
+    <!-- Constellation SVG -->
+    <svg id="constellationSvg"></svg>
+
+    <header>
+        <div class="logo">$$ ChewKai</div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#showcase">Showcase</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#download">Download</a>
+            <a href="#" id="discord-link" title="Discord">Discord</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ChewKai Client</h1>
+            <p>Fast FPS, BEST NAME.</p>
+            <a href="#download" class="download-btn">Download Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Powerful Features</h2>
+        <div class="features-grid">
+            <div class="feature-card liquid-glass">
+                <div class="feature-icon">D</div>
+                <h3>Works with mods wowowowow</h3>
+                <p>easy install for other mods.</p>
+            </div>
+            <div class="feature-card liquid-glass">
+                <div class="feature-icon">I</div>
+                <h3>Secure & Safe</h3>
+                <p>Protected by Kai's humongous ass.</p>
+            </div>
+            <div class="feature-card liquid-glass">
+                <div class="feature-icon">H</div>
+                <h3>Customizable</h3>
+                <p>Change color, thats it nigger.</p>
+            </div>
+            <div class="feature-card liquid-glass">
+                <div class="feature-icon">D</div>
+                <h3>Dig Bick</h3>
+                <p>Dig bick, up ass.</p>
+            </div>
+            <div class="feature-card liquid-glass">
+                <div class="feature-icon">I</div>
+                <h3>Best stat</h3>
+                <p>You will know your stats.</p>
+            </div>
+            <div class="feature-card liquid-glass">
+                <div class="feature-icon">H</div>
+                <h3>Fast like my brain</h3>
+                <p>Fastest of the fps, but lack of brain power still can't save you icl.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section id="showcase" class="showcase">
+        <div class="showcase-grid liquid-glass">
+            <div class="showcase-copy">
+                <h2>Client Showcase</h2>
+                <p>Preview the ChewKai experience with a polished client demo. Upload your showcase video later and it will play cleanly inside this frame.</p>
+                <a href="#download" class="download-btn">See Download</a>
+            </div>
+            <div class="showcase-video liquid-glass">
+                <div class="video-placeholder">
+                    <span>Video placeholder</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item liquid-glass">
+                <div class="gallery-image"><img src="C:\Users\Muljadi Irawan\Pictures\Screenshots\Screenshot 2026-05-12 200934.png"></div>
+                <div class="gallery-overlay">
+                    <h3>Goated Interface</h3>
+                    <p>TUNG TUNG GOD SAHUR</p>
+                </div>
+            </div>
+            <div class="gallery-item liquid-glass">
+                <div class="gallery-image"></div>
+                <div class="gallery-overlay">
+                    <h3>Gaming Mode</h3>
+                    <p>Optimized for performance</p>
+                </div>
+            </div>
+            <div class="gallery-item liquid-glass">
+                <div class="gallery-image"></div>
+                <div class="gallery-overlay">
+                    <h3>Dark Theme</h3>
+                    <p>Easy on the eyes</p>
+                </div>
+            </div>
+            <div class="gallery-item liquid-glass">
+                <div class="gallery-image"></div>
+                <div class="gallery-overlay">
+                    <h3>Settings</h3>
+                    <p>Full customization options</p>
+                </div>
+            </div>
+            <div class="gallery-item liquid-glass">
+                <div class="gallery-image"></div>
+                <div class="gallery-overlay">
+                    <h3>Dashboard</h3>
+                    <p>Real-time analytics</p>
+                </div>
+            </div>
+            <div class="gallery-item liquid-glass">
+                <div class="gallery-image"></div>
+                <div class="gallery-overlay">
+                    <h3>Notifications</h3>
+                    <p>Stay informed always</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ChewKai Client. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let starPositions = [];
+
+        // Generate starfield
+        function generateStars() {
+            const starfield = document.getElementById('starfield');
+            const starCount = 260;
+            starPositions = [];
+            
+            for (let i = 0; i < starCount; i++) {
+                const x = Math.random() * 100;
+                const y = Math.random() * 300;
+                
+                const star = document.createElement('div');
+                star.className = 'stars';
+                star.dataset.starIndex = i;
+                star.style.left = x + '%';
+                star.style.top = y + '%';
+                const floatDuration = Math.random() * 18 + 10;
+                star.style.animation = `twinkle ${Math.random() * 1.5 + 2.5}s infinite ease-in-out, float ${floatDuration}s infinite ease-in-out alternate`;
+                star.style.animationDelay = `${Math.random() * -20}s, ${Math.random() * -20}s`;
+                star.style.opacity = Math.random() * 0.5 + 0.35;
+                
+                starPositions.push({
+                    x: x,
+                    y: y,
+                    element: star
+                });
+                
+                        starfield.appendChild(star);
+            }
+        }
+
+        // Mouse trail
+        const trailDots = [];
+        const trailPoints = [];
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+
+        function setupCursorTrail() {
+            for (let i = 0; i < 14; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'trail-dot';
+                dot.style.opacity = `${1 - i * 0.06}`;
+                dot.style.width = `${12 - i * 0.4}px`;
+                dot.style.height = `${12 - i * 0.4}px`;
+                document.body.appendChild(dot);
+                trailDots.push(dot);
+                trailPoints.push({ x: mouseX, y: mouseY });
+            }
+
+            window.addEventListener('mousemove', (event) => {
+                mouseX = event.clientX;
+                mouseY = event.clientY;
+            });
+
+            requestAnimationFrame(updateCursorTrail);
+        }
+
+        function updateCursorTrail() {
+            let x = mouseX;
+            let y = mouseY;
+
+            trailDots.forEach((dot, index) => {
+                const nextX = trailPoints[index].x + (x - trailPoints[index].x) * 0.22;
+                const nextY = trailPoints[index].y + (y - trailPoints[index].y) * 0.22;
+                trailPoints[index].x = nextX;
+                trailPoints[index].y = nextY;
+                dot.style.transform = `translate3d(${nextX}px, ${nextY}px, 0) scale(${1 - index * 0.04})`;
+                dot.style.opacity = `${0.24 * (1 - index / trailDots.length)}`;
+                x = nextX;
+                y = nextY;
+            });
+
+            requestAnimationFrame(updateCursorTrail);
+        }
+
+        // Calculate distance between two points
+        function distance(p1, p2) {
+            return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
+        }
+
+        // Generate constellations connecting nearest stars
+        function generateConstellations() {
+            const svg = document.getElementById('constellationSvg');
+            svg.innerHTML = '';
+            
+            // Only process 1/5 of stars for constellations
+            const constellationStars = starPositions.filter(() => Math.random() < 0.2);
+            
+            constellationStars.forEach((star) => {
+                const distances = starPositions.map((otherStar, idx) => ({
+                    idx: idx,
+                    dist: distance(star, otherStar)
+                })).filter(d => d.dist > 0).sort((a, b) => a.dist - b.dist);
+
+                // Connect to only 1-2 nearest stars for small constellations
+                const numConnections = Math.random() < 0.5 ? 1 : 2;
+                for (let i = 0; i < Math.min(numConnections, distances.length); i++) {
+                    if (distances[i].dist < 22) { // Slightly larger constellation threshold for more visible connections
+                        const otherStar = starPositions[distances[i].idx];
+                        
+                                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                        line.dataset.start = star.element.dataset.starIndex;
+                        line.dataset.end = otherStar.element.dataset.starIndex;
+                        line.setAttribute('stroke', 'rgba(255, 255, 255, 0.16)');
+                        line.setAttribute('stroke-width', '0.6');
+                        line.setAttribute('stroke-linecap', 'round');
+                        line.setAttribute('class', 'constellation-line');
+                        
+                        svg.appendChild(line);
+                    }
+                }
+            });
+
+            updateConstellations();
+        }
+
+        function updateConstellations() {
+            const svg = document.getElementById('constellationSvg');
+            const svgRect = svg.getBoundingClientRect();
+            const lines = svg.querySelectorAll('line');
+            
+            lines.forEach(line => {
+                const start = document.querySelector(`[data-star-index="${line.dataset.start}"]`);
+                const end = document.querySelector(`[data-star-index="${line.dataset.end}"]`);
+                if (!start || !end) return;
+
+                const startRect = start.getBoundingClientRect();
+                const endRect = end.getBoundingClientRect();
+                
+                line.setAttribute('x1', startRect.left - svgRect.left + startRect.width / 2);
+                line.setAttribute('y1', startRect.top - svgRect.top + startRect.height / 2);
+                line.setAttribute('x2', endRect.left - svgRect.left + endRect.width / 2);
+                line.setAttribute('y2', endRect.top - svgRect.top + endRect.height / 2);
+            });
+
+            requestAnimationFrame(updateConstellations);
+        }
+
+        let targetParallaxY = 0;
+        let currentParallaxY = 0;
+
+        // Parallax effect
+        function setupParallax() {
+            const starfield = document.getElementById('starfield');
+            const svg = document.getElementById('constellationSvg');
+            
+            window.addEventListener('scroll', () => {
+                targetParallaxY = window.scrollY * 0.15;
+            });
+
+            function parallaxLoop() {
+                currentParallaxY += (targetParallaxY - currentParallaxY) * 0.1;
+                const transform = `translateY(${currentParallaxY}px)`;
+                starfield.style.transform = transform;
+                svg.style.transform = transform;
+                requestAnimationFrame(parallaxLoop);
+            }
+
+            parallaxLoop();
+        }
+
+        // Initialize
+        window.addEventListener('load', () => {
+            generateStars();
+            generateConstellations();
+            setupCursorTrail();
+            setupParallax();
+        });
+
+        // Handle window resize for constellations
+        window.addEventListener('resize', () => {
+            generateConstellations();
+        });
+    </script>
+</body>
+</html>
